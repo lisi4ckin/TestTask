@@ -6,7 +6,7 @@ class Category(models.Model):
     slug = models.SlugField(unique=True, db_index=True, verbose_name="URL")
 
     def __str__(self):
-        return self.name
+        return {self.name, self.slug}
 
 
 class Product(models.Model):
