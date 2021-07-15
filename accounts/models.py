@@ -12,4 +12,4 @@ class User(models.Model):
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)
     patronymic_name = models.CharField(max_length=40)
-    role = models.CharField(models.ForeignKey(Role, on_delete=models.CASCADE))
+    role = models.ForeignKey(Role, on_delete=models.CASCADE)

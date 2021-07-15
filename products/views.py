@@ -1,9 +1,6 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Main Page")
+    return render(request, "index.html")
 
-
-def about_products(request):
-    return HttpResponse("Products")
