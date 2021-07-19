@@ -1,0 +1,13 @@
+{% block content %}
+    <div class="products-description">
+        <p>Products</p>
+    </div>
+
+    {% for a in products %}
+        <div class="products-content">
+            <p>{{ a.product_category }}</p>
+            <p>{{ a.name }}</p>
+            <p>{{ a.description }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
