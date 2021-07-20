@@ -3,7 +3,7 @@ from .models import Product
 
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
 
 
 def products(request):
