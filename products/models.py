@@ -12,6 +12,7 @@ class Category(models.Model):
 class Product(models.Model):
     product_category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
+    price = models.IntegerField(null=False)
     description = models.TextField()
     slug = models.SlugField(unique=True, db_index=True, verbose_name="URL")
 

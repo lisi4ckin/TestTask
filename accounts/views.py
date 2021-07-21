@@ -8,5 +8,5 @@ def SignInView(request):
     account = authenticate(username=username, password=password)
     if account:
         login(request, account)
-        return redirect('/')
+        return redirect('/products/')
     return render(request, 'registrations/login.html')

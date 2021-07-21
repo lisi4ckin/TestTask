@@ -2,5 +2,5 @@ from django import forms
 
 
 class SignInForm(forms.Form):
-    name = forms.CharField()
+    username = forms.CharField()
     password = forms.CharField()

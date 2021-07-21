@@ -1,11 +1,10 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Category
 
 
 def index(request):
-    return render(request, 'index.html')
+    categories = Category.objects.order_by('-name')
+    products = Product.objects.order_by('-name')
+    return render(request, 'index.html', {'products': products,
+                                          'categories': categories})
 
-
-def products(request):
-    products = Product.objects.order_by('-name')[:1]
-    return render(request, 'products/products.html', {'products': products})

@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.shortcuts import redirect
+
 from accounts import views as accountViews
 from products import views as vs
 
