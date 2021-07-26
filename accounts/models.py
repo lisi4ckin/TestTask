@@ -12,4 +12,8 @@ class User(models.Model):
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)
     patronymic_name = models.CharField(max_length=40)
+    password = models.CharField()
     role = models.ForeignKey(Role, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.first_name
