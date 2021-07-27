@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
-
-{% block title %} List of products {% endblock %}
+{% block links %}
+    <li class="nav-item">
+        <a class="nav-link" href="/productManager">Add product</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/products">All products</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/magazine_admin">Add category</a>
+    </li>
+{% endblock %}
 {% block main %}
   <div class="row">
     {% for a in products %}

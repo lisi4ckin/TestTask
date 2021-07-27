@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.shortcuts import redirect
 
@@ -21,7 +21,10 @@ from accounts import views as accountViews
 from products import views as vs
 
 urlpatterns = [
-    url(r'^login/', accountViews.SignInView),
-    url(r'^admin/', admin.site.urls),
-    url(r'', vs.index)
+    url(r'^login', accountViews.SignInView),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^productManager', vs.Manager),
+    url(r'^magazine_admin', vs.Admin),
+    url(r'^products', vs.index),
+    url(r'', accountViews.SignInView)
 ]

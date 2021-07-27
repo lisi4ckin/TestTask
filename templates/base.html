@@ -28,13 +28,8 @@ crossorigin="anonymous">
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                {% block item_dropDown %}
-                {% endblock %}
-            </div>
-          </li>
+          {% block links %}
+          {% endblock %}
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
