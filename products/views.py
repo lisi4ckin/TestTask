@@ -17,6 +17,9 @@ def index(request):
         if form.cleaned_data['category']:
             products = products.filter(product_category__name=form.cleaned_data['category'])
 
+        if form.cleaned_data['name']:
+            products = products.filter(name__contains=form.cleaned_data['name'])
+
     if request.user.groups.filter(name='manager').exists():
         return render(request, 'products/products_all.html', {'form': form,
                                                               'products': products})

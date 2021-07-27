@@ -1,7 +1,6 @@
 from django import forms
 from .models import *
 from .models import Category
-from django.core.exceptions import ValidationError
 
 
 class AddProductForm(forms.ModelForm):
@@ -20,6 +19,7 @@ class SearchForm(forms.Form):
     min_price = forms.IntegerField(label="for", required=False)
     max_price = forms.IntegerField(label="to", required=False)
     category = forms.ModelChoiceField(queryset=Category.objects.all(), label="Category", required=False)
+    name = forms.CharField(label="name", required=False)
 
     def __init__(self, *args, **kwargs):
         super(SearchForm, self).__init__(*args, **kwargs)
